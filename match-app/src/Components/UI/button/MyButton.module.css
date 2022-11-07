@@ -1,0 +1,12 @@
+.myBtn {
+    display: none;
+    width: 5rem;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+}
+
+
+.myBtn.active {
+    display: block;
+}
