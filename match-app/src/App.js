@@ -6,35 +6,47 @@ import { MyInput } from './Components/UI/input/MyInput';
 import { Time } from './Components/time/time'
 import { Profile } from './Pages/Profile/Profile'
 import { Settings } from './Pages/Settings/Settings'
+import { RegistrationPage } from './Pages/RegistrationForm/RegistrationForm'
+import useLocalStorage from './Components/Hooks/useLocalStorage';
+import AddToList from './Components/addToList/AddToList';
+import { Login } from './Pages/Login/Login';
  
 function App() {
 
-  const list = ([
-    { id: 12345678910,
-      name: 'Hryhorii',
-      age: 22,
-      city: 'Kyiv',
-    },
-    // { id: 2,
-    //   name: 'Valerii',
-    //   age: 30,
-    //   city: 'Lviv',
-    // },
-    // { id: 3,
-    //   name: 'Dmutro',
-    //   age: 47,
-    //   city: 'Odessa',
-    // },
+  const [data, setData] = useLocalStorage('key',[
+ 
   ])
+
+  
+
+  
 
   const [searchQuery, setSearchQuery] = useState()
 
   const [btn, setBtn] = useState(false)
   
+  const removeUser = (data) => {
+    setData(data.filter(data => data.id !== data.id))
+  }
+  
+  const createNewValue = (newUserLogin) => {
+    setData([...data, newUserLogin])
+  }
+  
 
   return (
     <div className="App">
-        <Router>
+      {/* {data.map(datas => 
+        <div>
+          <div>{datas.name}</div>
+          <div>{datas.password}</div>
+          <button onClick={() => removeUser(data)}>remove</button>
+        </div>
+      )} */}
+
+        <Login add={createNewValue}/>
+        {/* <RegistrationPage add={createNewValue}/> */}
+        {/* <Router>
           <Link to='/'>
             <i class="fa-solid fa-user"></i>
           </Link>
@@ -53,12 +65,12 @@ function App() {
 
         
 
-        <div className='btnFiled'>
-          <button onClick={() => setBtn(true)}>hidden btn</button>
-          <MyButton >press!</MyButton>
-          <MyButton visible={btn} setVisible={setBtn}>press!</MyButton>
-        </div>
-      </div>
+          <div className='btnFiled'>
+            <button onClick={() => setBtn(true)}>hidden btn</button>
+            <MyButton >press!</MyButton>
+            <MyButton visible={btn} setVisible={setBtn}>press!</MyButton>
+          </div>
+        </div> */}
     </div>
   );
 }
