@@ -5,6 +5,11 @@ import { RegistrationPage } from "../RegistrationForm/RegistrationForm";
 export const Login = ({add}) => {
 
     const [active, setActive] = useState(true)
+    
+    const activeLogin = (active) => {
+        setActive(active)
+    }
+  
 
     return(
         <div>
@@ -25,7 +30,7 @@ export const Login = ({add}) => {
                         </div>
                     </div>
                 </div>
-            :   <RegistrationPage add={add} active={setActive}/>
+            :   <RegistrationPage add={add} active={activeLogin}/>
             }
         </div>
        

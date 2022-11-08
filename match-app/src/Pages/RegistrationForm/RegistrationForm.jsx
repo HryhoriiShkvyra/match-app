@@ -3,7 +3,7 @@ import { useState } from "react";
 import classes from './RegistrationForm.module.css'
 
 
-export const RegistrationPage = ({add, setActive}) => {
+export const RegistrationPage = ({add, active}) => {
 
     const [userLogin, setUserLogin] = useState({name:'', password: ''});
 
@@ -15,7 +15,7 @@ export const RegistrationPage = ({add, setActive}) => {
         }
         add(newUserLogin)
         setUserLogin({name: '', password: ''})
-        setActive(true)
+        active(true)
         console.log(addNewItem)
     }
 
