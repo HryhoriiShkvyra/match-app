@@ -7,5 +7,16 @@
     width: 100%;
     height: 80%;
     margin-top: 3rem;
+    padding: 2rem;
+    border: 1px solid #333;
+}
+
+.value {
+    font-size: 1.3rem;
+
+}
+
+.input {
+    width: 50%;
     border: 1px solid #333;
 }

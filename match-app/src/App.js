@@ -43,20 +43,20 @@ function App() {
 
         {/* <Login data={data} setData={setData} add={createNewValue} /> */}
         {/* <RegistrationPage add={createNewValue}/> */}
-        {/* <Router>
-          <Link to='/'>
+        <Router>
+          {/* <Link to='/'>
             <i class="fa-solid fa-user"></i>
           </Link>
           <Link to='/Settings'> 
             <i class="fa-solid fa-gear"></i>
-          </Link>
+          </Link> */}
           <Routes>
-            <Route path='/' element={<Profile/>}/>
+            <Route path='/' element={<Login/>}/>
             <Route path='/Settings' element={<Settings/>}/>
           </Routes>
-        </Router> */}
+        </Router>
 
-        <Profile/>
+        {/* <Profile/> */}
 
         {/* <div className='menu'>
         
