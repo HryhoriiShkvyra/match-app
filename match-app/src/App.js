@@ -13,17 +13,13 @@ import { Login } from './Pages/Login/Login';
  
 function App() {
 
-  const [data, setData] = useLocalStorage('key',[
- 
-  ])
+  const [data, setData] = useLocalStorage('key',[{}])
 
   
 
   
 
-  const [searchQuery, setSearchQuery] = useState()
 
-  const [btn, setBtn] = useState(false)
   
   const removeUser = (data) => {
     setData(data.filter(data => data.id !== data.id))
@@ -32,7 +28,7 @@ function App() {
   const createNewValue = (newUserLogin) => {
     setData([...data, newUserLogin])
   }
-  
+
 
   return (
     <div className="App">
@@ -40,11 +36,12 @@ function App() {
         <div>
           <div>{datas.name}</div>
           <div>{datas.password}</div>
+          // try to use getItem
           <button onClick={() => removeUser(data)}>remove</button>
         </div>
       )} */}
 
-        <Login add={createNewValue}/>
+        {/* <Login data={data} setData={setData} add={createNewValue} /> */}
         {/* <RegistrationPage add={createNewValue}/> */}
         {/* <Router>
           <Link to='/'>
@@ -57,8 +54,11 @@ function App() {
             <Route path='/' element={<Profile/>}/>
             <Route path='/Settings' element={<Settings/>}/>
           </Routes>
-        </Router>
-        <div className='menu'>
+        </Router> */}
+
+        <Profile/>
+
+        {/* <div className='menu'>
         
         
 
@@ -66,9 +66,9 @@ function App() {
         
 
           <div className='btnFiled'>
-            <button onClick={() => setBtn(true)}>hidden btn</button>
-            <MyButton >press!</MyButton>
-            <MyButton visible={btn} setVisible={setBtn}>press!</MyButton>
+            <button>hidden btn</button>
+            <MyButton>press!</MyButton>
+            <MyButton>press!</MyButton>
           </div>
         </div> */}
     </div>

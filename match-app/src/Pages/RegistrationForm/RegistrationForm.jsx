@@ -13,10 +13,10 @@ export const RegistrationPage = ({add, active}) => {
             ...userLogin, id: Date.now()
 
         }
+        active(true)
         add(newUserLogin)
         setUserLogin({name: '', password: ''})
-        active(true)
-        console.log(addNewItem)
+        
     }
 
 
@@ -40,6 +40,12 @@ export const RegistrationPage = ({add, active}) => {
                     type='password'
                 />
                 <button className={classes.btn} onClick={addNewItem}>Sign Up</button>
+                <div className={classes.escapeBtnBlock}>
+                    <button onClick={() => active(true)} className={classes.escapeBtn}>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                </div>
+                
             </form>
         </div>
     )

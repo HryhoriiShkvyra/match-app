@@ -35,3 +35,12 @@
     border: 1px solid #333;
 
 }
+
+.escapeBtnBlock {
+    position: absolute;
+    top: 4rem;
+}
+
+.escapeBtn {
+    font-size: 1.7rem;
+}
