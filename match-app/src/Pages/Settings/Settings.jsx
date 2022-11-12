@@ -9,7 +9,11 @@ export const Settings = () => {
         <div>
             <div className={classes.settingsInner}>
                 <div>
-                    Settings
+                <div>
+                    <div className={classes.value}>value from localeStorage</div>
+                    <input className={classes.input} placeholder='value from localeStorage'></input>
+                    <div className={classes.about}>description about what we want to change</div>
+                </div>
                 </div>
             </div>
         </div>

@@ -1,8 +1,21 @@
 import React, {useState} from "react";
 import classes from './Login.module.css'
 import { RegistrationPage } from "../RegistrationForm/RegistrationForm";
+import PropTypes from 'prop-types';
 
-export const Login = ({add, data, setData}) => {
+
+
+async function loginUser(credentials) {
+    return fetch('http://localhost:8080/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+    })
+    .then(data => data.json())
+}
+export function Login({add, setToken}) {
 
     // this window is shows only if ACTIVE is TRUE
     const [active, setActive] = useState(true)
@@ -11,22 +24,22 @@ export const Login = ({add, data, setData}) => {
         setActive(active)
     }
 
-    // 
-    const checkLoginInput = (e) => {
-        e.preventDefault()
-        const dataValue = {
-            ...data
-        }
-        if (dataValue === loginValue) {
-            console.log('work')
-        }
-        console.log('not work')
-        console.log(dataValue)
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const token = await loginUser({
+            username,
+            password
+        });
+        setToken(token)
     }
 
-    const [loginValue, setLoginValue] = useState([{login: '', password: ''}])
-    console.log(loginValue)
     
+
+
+    // const [loginValue, setLoginValue] = useState([{login: '', password: ''}])
+    
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
 
 
     return(
@@ -36,21 +49,21 @@ export const Login = ({add, data, setData}) => {
                     <div className='container'>
                         <div className={classes.loginPage}>
                             <div className={classes.loginTitle}>Login Page</div>
-                            <form className={classes.formInner}>
+                            <form onSubmit={handleSubmit} className={classes.formInner}>
                                 <input
-                                    value={loginValue.login}
-                                    onChange={e => setLoginValue({...loginValue, login: e.target.value})}
+                                    value={username}
+                                    onChange={e => setUsername(e.target.value)}
                                     className={classes.input} 
                                     placeholder="enter Login"
                                 />
                                 <input 
-                                    value={loginValue.password}
-                                    onChange={e => setLoginValue({...loginValue, password: e.target.value})}
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
                                     className={classes.input} 
                                     type='password' 
                                     placeholder="enter password"/>
                                 <div className={classes.btns}>
-                                    <button onClick={checkLoginInput} className={classes.btn}>Log In</button>
+                                    <button className={classes.btn}>Log In</button>
                                     <button onClick={() => setActive(false)} className={classes.btn}>Sign up</button>
                                 </div>
                                 
@@ -62,5 +75,9 @@ export const Login = ({add, data, setData}) => {
             }
         </div>
        
-    )
+    );
+}
+
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
 }
