@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import classes from './Login.module.css'
+
+import { RegistrationPage } from "../RegistrationPage/RegistrationPage";
 import { RegistrationPage } from "../RegistrationForm/RegistrationForm";
 import PropTypes from 'prop-types';
 
@@ -15,7 +17,11 @@ async function loginUser(credentials) {
     })
     .then(data => data.json())
 }
+
+export function Login({add, setToken, create, userData, setUserData}) {
+
 export function Login({add, setToken}) {
+
 
     // this window is shows only if ACTIVE is TRUE
     const [active, setActive] = useState(true)
@@ -23,6 +29,17 @@ export function Login({add, setToken}) {
     const activeLogin = (active) => {
         setActive(active)
     }
+
+    // const handleSubmit = async e => {
+    //     e.preventDefault();
+    //     const token = await loginUser({
+    //         username,
+    //         password
+    //     });
+    //     setToken(token)
+    // }
+
+    const [loginUser, setLoginUser] = useState([{username: '', password: ''}])
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -32,6 +49,7 @@ export function Login({add, setToken}) {
         });
         setToken(token)
     }
+
 
     
 
@@ -49,16 +67,28 @@ export function Login({add, setToken}) {
                     <div className='container'>
                         <div className={classes.loginPage}>
                             <div className={classes.loginTitle}>Login Page</div>
+
+                            <form  className={classes.formInner}>
+                                <input
+                                    value={loginUser.username}
+                                    onChange={e => setLoginUser(e.target.value)}
+
                             <form onSubmit={handleSubmit} className={classes.formInner}>
                                 <input
                                     value={username}
                                     onChange={e => setUsername(e.target.value)}
+
                                     className={classes.input} 
                                     placeholder="enter Login"
                                 />
                                 <input 
+
+                                    value={loginUser.password}
+                                    onChange={e => setLoginUser(e.target.value)}
+
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
+
                                     className={classes.input} 
                                     type='password' 
                                     placeholder="enter password"/>
@@ -71,7 +101,7 @@ export function Login({add, setToken}) {
                         </div>
                     </div>
                 </div>
-            :   <RegistrationPage add={add} active={activeLogin}/>
+            :   <RegistrationPage create={create} active={activeLogin}/>
             }
         </div>
        

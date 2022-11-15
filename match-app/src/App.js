@@ -6,11 +6,22 @@ import { MyInput } from './Components/UI/input/MyInput';
 import { Time } from './Components/time/time'
 import { Profile } from './Pages/Profile/Profile'
 import { Settings } from './Pages/Settings/Settings'
-import { RegistrationPage } from './Pages/RegistrationForm/RegistrationForm'
-import useLocalStorage from './Components/Hooks/useLocalStorage';
+import { RegistrationPage } from './Pages/RegistrationPage/RegistrationPage'
+import {useLocalStorage} from './Components/Hooks/useLocalStorage'
 import AddToList from './Components/addToList/AddToList';
 import { Login } from './Pages/Login/Login';
 import useToken from './Components/Hooks/useToken';
+
+  const [userData, setUserData] = useLocalStorage([
+  ], 'key')
+
+  const createNewUser = (newUser) => {
+    setUserData([...userData, newUser])
+    
+  }
+
+
+  // const array = (userData.find(x => x.id === 1668501783625))
 
 
 function setToken(userToken) {
@@ -34,14 +45,10 @@ function App() {
 
   return (
     <div className="App">
-      {/* {data.map(datas => 
-        <div>
-          <div>{datas.name}</div>
-          <div>{datas.password}</div>
-          // try to use getItem
-          <button onClick={() => removeUser(data)}>remove</button>
-        </div>
-      )} */}
+      
+
+      <Login userData={userData} setUserDat a={setUserData} create={createNewUser}/>
+        {/* <Router>
 
         {/* <Login data={data} setData={setData} add={createNewValue} /> */}
         {/* <RegistrationPage add={createNewValue}/> */}
@@ -51,28 +58,15 @@ function App() {
           </Link>
           <Link to='/Settings'> 
             <i class="fa-solid fa-gear"></i>
+          </Link> 
+
           </Link>
+
           <Routes>
             <Route path='/' element={<Profile/>}/>
             <Route path='/Settings' element={<Settings/>}/>
           </Routes>
-        </Router>
-
-        {/* <Profile/> */}
-
-        {/* <div className='menu'>
-        
-        
-
-
-        
-
-          <div className='btnFiled'>
-            <button>hidden btn</button>
-            <MyButton>press!</MyButton>
-            <MyButton>press!</MyButton>
-          </div>
-        </div> */}
+        </Router> */}
     </div>
   );
 }
