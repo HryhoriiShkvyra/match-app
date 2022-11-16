@@ -1,17 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
-import './styles/Index.css'
-import { MyButton }  from './Components/UI/button/MyButton';
-import { MyInput } from './Components/UI/input/MyInput';
-import { Time } from './Components/time/time'
-import { Profile } from './Pages/Profile/Profile'
-import { Settings } from './Pages/Settings/Settings'
-import { RegistrationPage } from './Pages/RegistrationForm/RegistrationForm'
+import './styles/Index.css';
 import useLocalStorage from './Components/Hooks/useLocalStorage';
-import AddToList from './Components/addToList/AddToList';
 import { Login } from './Pages/Login/Login';
+import { Profile } from './Pages/Profile/Profile';
+import { Settings } from './Pages/Settings/Settings';
 import useToken from './Components/Hooks/useToken';
-
+import Main from './Pages/Main/Main';
+import { RegistrationPage } from './Pages/RegistrationPage/RegistrationPage';
 
 function setToken(userToken) {
   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -25,26 +21,27 @@ function getToken() {
 }
 
 function App() {
-  const {token, setToken} = useToken();
+
+  const [userData, setUserData] = useLocalStorage([
+    {id: 1, username: ''}
+], 'key')
+
+  const createNewUser = (newUserLogin) => {
+  setUserData([...userData, newUserLogin])
+  }
+
+
+
+  const [token, setToken] = useState();
 
   if(!token) {
-    return <Login setToken={setToken}/>
+    return <Login setToken={setToken}  create={createNewUser}/>
   }
+
 
 
   return (
     <div className="App">
-      {/* {data.map(datas => 
-        <div>
-          <div>{datas.name}</div>
-          <div>{datas.password}</div>
-          // try to use getItem
-          <button onClick={() => removeUser(data)}>remove</button>
-        </div>
-      )} */}
-
-        {/* <Login data={data} setData={setData} add={createNewValue} /> */}
-        {/* <RegistrationPage add={createNewValue}/> */}
         <Router>
           <Link to='/'>
             <i class="fa-solid fa-user"></i>
@@ -53,26 +50,11 @@ function App() {
             <i class="fa-solid fa-gear"></i>
           </Link>
           <Routes>
-            <Route path='/' element={<Profile/>}/>
+            <Route path='/' element={<Profile userData={userData} setUserData={setUserData}/>}/>
             <Route path='/Settings' element={<Settings/>}/>
+            <Route path='/RegistrationPage' element={<RegistrationPage/>}/>
           </Routes>
         </Router>
-
-        {/* <Profile/> */}
-
-        {/* <div className='menu'>
-        
-        
-
-
-        
-
-          <div className='btnFiled'>
-            <button>hidden btn</button>
-            <MyButton>press!</MyButton>
-            <MyButton>press!</MyButton>
-          </div>
-        </div> */}
     </div>
   );
 }
