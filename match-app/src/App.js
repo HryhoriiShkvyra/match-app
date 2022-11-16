@@ -22,7 +22,17 @@ function getToken() {
 
 function App() {
 
-  const [userData, setUserData] = useLocalStorage([], 'key')
+  const [userData, setUserData] = useLocalStorage([
+    {id: 1, 
+    name: 'Andrei', 
+    password: '12345678', 
+    age: 22,
+    verification: true,
+    photo: '', 
+    
+    // about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nobis provident amet, harum id itaque reprehenderit sapiente a inventore autem similique! Corrupti ab eligendi eveniet earum, temporibus accusantium in id sint, incidunt commodi magni iste odit, dolorum labore numquam minus dolor? Voluptatum consequatur dolorem nisi iste ipsa asperiores nemo hic?'
+  }
+  ], 'key')
 
   const createNewUser = (newUserLogin) => {
   setUserData([...userData, newUserLogin])
@@ -41,18 +51,30 @@ function App() {
   return (
     <div className="App">
         <Router>
-          <Link to='/'>
+          <div className='menu'>
+          <Link className='menuBtn' to='/'>
+            <i class="fa-solid fa-fire"></i>
+          </Link>
+          <Link className='menuBtn' to='/'>
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </Link>
+          <Link className='menuBtn' to='/'>
             <i class="fa-solid fa-user"></i>
           </Link>
-          <Link to='/Settings'> 
+          <Link className='menuBtn' to='/'>
+            <i class="fa-solid fa-comments"></i>
+          </Link>
+          <Link className='menuBtn' to='/Settings'> 
             <i class="fa-solid fa-gear"></i>
           </Link>
+          </div>
           <Routes>
-            <Route path='/' element={<Profile userData={userData} setUserData={setUserData}/>}/>
+            <Route path='/' element={<Profile userData={userData} setUserData={setUserData}/>}/>1
             <Route path='/Settings' element={<Settings/>}/>
             <Route path='/RegistrationPage' element={<RegistrationPage/>}/>
           </Routes>
         </Router>
+
     </div>
   );
 }

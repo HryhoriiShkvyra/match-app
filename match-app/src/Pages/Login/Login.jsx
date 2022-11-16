@@ -21,7 +21,6 @@ export function Login({create, setToken}) {
     const [password, setPassword] = useState();
     // const [loginValue, setLoginValue] = useState([{login: '', password: ''}])
 
-
     // this window is shows only if ACTIVE is TRUE
     const [active, setActive] = useState(true)
     // callback from RegistrationForm. do this ACTIVE is FALSE

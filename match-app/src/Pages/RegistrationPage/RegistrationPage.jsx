@@ -4,7 +4,7 @@ import classes from './RegistrationPage.module.css'
 
 export const RegistrationPage = ({active, create}) => {
 
-    const [userData, setUserData] = useState({name:'', password: '', photo: ''});
+    const [userData, setUserData] = useState({name:'', password: '', photo: '', about: ''});
 
 
 
@@ -14,7 +14,7 @@ export const RegistrationPage = ({active, create}) => {
         const newUserLogin = {
             ...userData, id: Date.now()
         }
-        active(true)
+        // active(true)
         create(newUserLogin)
         setUserData({name: '', password: '', photo: '', about: ''})
         
@@ -56,7 +56,7 @@ export const RegistrationPage = ({active, create}) => {
                 <button className={classes.btn} onClick={addNewItem}>Sign Up</button>
                 <div className={classes.escapeBtnBlock}>
                     <button onClick={() => active(true)} className={classes.escapeBtn}>
-                        s<i class="fa-solid fa-arrow-left"></i>
+                        <i class="fa-solid fa-arrow-left"></i>
                     </button>
                 </div>
                 
