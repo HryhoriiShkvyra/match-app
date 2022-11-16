@@ -4,17 +4,19 @@ import classes from './RegistrationPage.module.css'
 
 export const RegistrationPage = ({active, create}) => {
 
-    const [userLogin, setUserLogin] = useState({name:'', password: ''});
+    const [userData, setUserData] = useState({name:'', password: '', photo: ''});
+
+
+
 
     const addNewItem = (e) => { 
         e.preventDefault();
         const newUserLogin = {
-            ...userLogin, id: Date.now()
-
+            ...userData, id: Date.now()
         }
         active(true)
         create(newUserLogin)
-        setUserLogin({name: '', password: ''})
+        setUserData({name: '', password: '', photo: '', about: ''})
         
     }
 
@@ -25,18 +27,31 @@ export const RegistrationPage = ({active, create}) => {
             <div className={classes.title}>Registration Page</div>
             <form className={classes.formInner}>
                 <input
-                    value={userLogin.name}
-                    onChange={e => setUserLogin({...userLogin, name: e.target.value})}
+                    value={userData.name}
+                    onChange={e => setUserData({...userData, name: e.target.value})}
                     className={classes.input}
                     placeholder="enter Login"
                     type='text'
                 />
                 <input
-                    value={userLogin.password}
-                    onChange={e => setUserLogin({...userLogin, password: e.target.value})}
+                    value={userData.password}
+                    onChange={e => setUserData({...userData, password: e.target.value})}
                     className={classes.input}
                     placeholder="enter Password"
                     type='password'
+                />
+                <input
+                    value={userData.photo}
+                    onChange={e => setUserData({...userData, photo: e.target.value})}
+                    className={classes.inputFile}
+                    type='file'
+                />
+                <input
+                    value={userData.about}
+                    onChange={e => setUserData({...userData, about: e.target.value})}
+                    className={classes.inputAbout}
+                    placeholder="enter about"
+                    type='text'
                 />
                 <button className={classes.btn} onClick={addNewItem}>Sign Up</button>
                 <div className={classes.escapeBtnBlock}>

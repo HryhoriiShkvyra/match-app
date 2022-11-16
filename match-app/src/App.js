@@ -22,9 +22,7 @@ function getToken() {
 
 function App() {
 
-  const [userData, setUserData] = useLocalStorage([
-    {id: 1, username: ''}
-], 'key')
+  const [userData, setUserData] = useLocalStorage([], 'key')
 
   const createNewUser = (newUserLogin) => {
   setUserData([...userData, newUserLogin])
