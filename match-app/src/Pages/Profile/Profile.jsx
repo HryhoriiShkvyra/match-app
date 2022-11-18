@@ -9,7 +9,6 @@ export const Profile = ({userData, setUserData}) => {
 
     return(
         <div className="containerIn">
-            <div className={classes.Title}>Y profile</div>
             <div className={classes.content}>
                 <div className={classes.photo}>{user.photo}</div>
                 <div className={classes.userAbout}>

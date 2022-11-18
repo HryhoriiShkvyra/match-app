@@ -1,3 +1,7 @@
+.content {
+    margin: 0 auto;
+}
+
 .pageTitle {
     text-align: center;
     font-size: 1.7rem;
@@ -30,8 +34,8 @@
     gap: 3.4rem;
     justify-items: center;
 
-    margin-top: 2rem; 
-
+    margin-top: 4rem;
+    justify-content: center;
     font-size: 0.8rem;
 }
 
@@ -39,9 +43,9 @@
     display: flex;
     gap: 4rem;
 
-    margin: 11.5rem auto 1rem;
+    margin-top: 14.5rem;
 
-    justify-items: center;
+    justify-content: center;
     font-size: 0.8rem;
 }
 

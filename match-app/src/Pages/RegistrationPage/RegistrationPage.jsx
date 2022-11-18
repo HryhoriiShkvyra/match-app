@@ -14,7 +14,7 @@ export const RegistrationPage = ({active, create}) => {
         const newUserLogin = {
             ...userData, id: Date.now()
         }
-        // active(true)
+        active(true)
         create(newUserLogin)
         setUserData({name: '', password: '', photo: '', about: ''})
         
