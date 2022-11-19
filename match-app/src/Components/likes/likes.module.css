@@ -6,8 +6,40 @@
     margin: 10rem auto 0;
 }
 
-
-.active {
-    display: block;
+.contentFalse {
+    margin-top: 16rem;
+    text-align: center;
 }
 
+.contentFalseIcon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+    font-size: 3rem;
+    transform: rotate(45deg);
+}
+
+.contentFalseText {
+    margin-top: 1rem;
+    color: rgb(119, 119, 119);
+}
+
+.contentFalseBtn {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 25rem auto 0;
+    padding-top: 0.3rem;
+    border: 2px solid rgb(100, 119, 130);
+    border-radius: 2rem;
+}
+
+
+        /* I dunno how make gradient color */
+
+.btn {
+    font-size: 2.3rem;
+    color: rgb(83,8,88);
+    background: -webkit-linear-gradient(90deg, rgba(83,8,88,1) 0%, rgba(129,17,136,1) 35%, rgba(236,27,250,1) 100%);
+    -webkit-background-clip: text;
+    webkit-text-fill-color: transparent;
+}

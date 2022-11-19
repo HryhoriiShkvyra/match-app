@@ -35,6 +35,7 @@ function App() {
     verification: true,
     photo: '', 
     
+    
     // about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nobis provident amet, harum id itaque reprehenderit sapiente a inventore autem similique! Corrupti ab eligendi eveniet earum, temporibus accusantium in id sint, incidunt commodi magni iste odit, dolorum labore numquam minus dolor? Voluptatum consequatur dolorem nisi iste ipsa asperiores nemo hic?'
   }
   ], 'key')

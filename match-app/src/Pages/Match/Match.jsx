@@ -9,28 +9,35 @@ import { TopPicks } from '../../Components/top picks/topPicks'
 
 export const Match = () => {
 
-    const [activeTab, setActiveTab] = useState()
-    console.log(activeTab)
+    const [activeTab, setActiveTab] = useState('#')
 
     return(
         <div className='containerIn'>
-            <div className={classes.lists}>
-                <div setVisible={setActiveTab} onClick={() => setActiveTab('#')}>
+            <div className={classes.tabs}>
+                <div className={classes.tab} onClick={() => setActiveTab('#')}>
                     likes
                 </div>
-                <div onClick={() => setActiveTab('topPicks')}>
+                <div className={classes.br}></div>
+                <div className={classes.tab} onClick={() => setActiveTab('topPicks')}>
                     top picks
                 </div>
-                <div onClick={() => setActiveTab('likesSent')}>
+                <div className={classes.br}></div>
+                <div className={classes.tab} onClick={() => setActiveTab('likesSent')}>
                     likes sent
                 </div>
             </div>
-            {/* <Link onClick={() => setActivePage('profile')} className={activePage === 'profile' ? 'active' : 'menuBtn'} to='/Profile'>  */}
 
             <div className={classes.listContent}>
-            <Likes visible={activeTab} activeTab={activeTab} />
-            <TopPicks activeTab={activeTab} />
-            <LikesSent activeTab={activeTab} />
+                <div className={activeTab === '#' ? classes.active : classes.deActive}>
+                    <Likes/>
+                </div>
+                <div className={activeTab === 'topPicks' ? classes.active : classes.deActive}>
+                    <TopPicks />
+                </div>
+                <div className={activeTab === 'likesSent' ? classes.active : classes.deActive}>
+                    <LikesSent />
+                </div>    
+            
 
             </div>
         </div>
