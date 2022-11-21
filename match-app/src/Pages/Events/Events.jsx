@@ -9,7 +9,6 @@ import IMG3 from '../../assets/event/IMG3.jpg'
 export const Events = () => {
     return(
         <div className='containerIn'>
-            <div className={classes.scroll}>
                 <div className={classes.firstBlock}>
                     <div className={classes.aboutBlock}>
                         <div className={classes.blockTitle}>Welcome to explore</div>
@@ -63,7 +62,28 @@ export const Events = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+                <div className={classes.secondBlock}>
+                <div className={classes.aboutBlock}>
+                        <div className={classes.blockTitle}>Welcome to explore</div>
+                        <div className={classes.blockSubTitle}>My vibe ...</div>
+                    </div>
+                    <div className={classes.cards}>
+                        <div className={classes.cardSlim}>
+                            <div >
+                                <img className={classes.cardBackground}src={IMG1}/>
+                            </div>
+                            <div className={classes.cardText}>
+                                <span className={classes.cardTitle}>
+                                    Free Tonight
+                                </span>
+                                <div className={classes.cardAbout}>
+                                    <span className={classes.cardDescription}>Down for something spontaneous</span>
+                                    <span className={classes.cardType}>Discover</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     )
 }
