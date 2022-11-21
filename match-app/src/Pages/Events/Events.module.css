@@ -1,0 +1,125 @@
+.scroll {
+    overflow: hidden;
+}
+
+.firstBlock {
+    overflow: auto;
+    width: 100%;
+    height: 46rem;
+
+    padding: 0.5rem 0 0 0.5rem;
+
+    border: 1px solid #333;
+}
+
+.blockTitle {
+    font-weight: 700;
+}
+
+.blockSubTitle {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.cardSlim {
+    width: 97%;
+    height: 20rem;
+
+
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+}
+
+.cardWide {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 98%;
+    height: 20rem;
+
+    margin-top: 0.7rem;
+
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+}
+
+.cardBackground {
+    width: 15.2rem;
+    position: relative;
+
+}
+
+.cardBackgroundWide {
+    width: 31rem;
+}
+
+
+.cardText {
+    position: absolute;
+    top: 12rem;
+    color: #fff;
+    background: none;
+
+}
+
+.cardTextWide {
+    position: absolute;
+    top: 9rem;
+    color: #fff;
+    background: none;
+
+}
+
+.cardTitle {
+    margin-left: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: none;
+}
+
+
+.cardAbout {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 6rem 0 0 0.5rem;
+    
+
+    font-weight: 700;
+    background: none;
+
+
+}
+
+
+.cardDescription {
+    width: 9rem;
+    margin-bottom: 0.3rem;
+    background: none;
+
+
+}
+
+.cardDescriptionWide {
+    width: 15rem;
+    margin-bottom: 0.3rem;
+    background: none;
+}
+
+
+
+.cardType {
+    font-size: 0.9rem;
+    color: #999;
+    background: none;
+
+}
+

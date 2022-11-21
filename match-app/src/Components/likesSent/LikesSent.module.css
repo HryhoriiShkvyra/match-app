@@ -1,7 +1,47 @@
-.active {
-    display: block;
+
+.content {
+    height: 51rem;
+    display: grid;
+    grid-template-rows: 7% 80% 13%;
+
+    justify-items: center;
 }
 
-.deActive {
-    display: none;
+.main {
+    margin-top: 12rem;
+}
+
+.photo {
+    width: 6rem;
+    height: 6rem;
+
+    margin: 0 auto 2rem;
+
+    border: 1px solid #333;
+    border-radius: 3rem;
+}
+
+
+.contentBtn {
+    margin-top: 2rem;
+}
+
+.btnF {
+    width: 8rem;
+    height: 1.8rem;
+    border-radius: 1rem;
+
+    background-color: #333;
+    color: #999;
+}
+
+
+.btnS {
+    width: 15rem;
+    height: 2.3rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    
+    background-color: #333;
+    color: #999;
 }

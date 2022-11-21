@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import classes from './Match.module.css'
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import { Likes } from '../../Components/likes/likes'
-import { LikesSent } from '../../Components/likesSent/likesSent'
-import { TopPicks } from '../../Components/top picks/topPicks'
+import { TopPicks } from '../../Components/TopPicks/TopPicks'
+import { LikesSent } from '../../Components/LikesSent/LikesSent'
 
 
 
-export const Match = () => {
+export const Match = ({userData, setUserData}) => {
 
     const [activeTab, setActiveTab] = useState('#')
-
+    
     return(
         <div className='containerIn'>
             <div className={classes.tabs}>
@@ -18,26 +17,27 @@ export const Match = () => {
                     likes
                 </div>
                 <div className={classes.br}></div>
-                <div className={classes.tab} onClick={() => setActiveTab('topPicks')}>
-                    top picks
-                </div>
-                <div className={classes.br}></div>
                 <div className={classes.tab} onClick={() => setActiveTab('likesSent')}>
                     likes sent
                 </div>
+                <div className={classes.br}></div>
+                <div className={classes.tab} onClick={() => setActiveTab('topPicks')}>
+                    top picks
+                </div>
+                
             </div>
 
             <div className={classes.listContent}>
                 <div className={activeTab === '#' ? classes.active : classes.deActive}>
-                    <Likes/>
-                </div>
-                <div className={activeTab === 'topPicks' ? classes.active : classes.deActive}>
-                    <TopPicks />
+                    <Likes userData={userData}/>
                 </div>
                 <div className={activeTab === 'likesSent' ? classes.active : classes.deActive}>
-                    <LikesSent />
-                </div>    
-            
+                    <LikesSent userData={userData}/>
+                </div>      
+                <div className={activeTab === 'topPicks' ? classes.active : classes.deActive}>
+                    <TopPicks userData={userData}/>
+                </div>
+                
 
             </div>
         </div>

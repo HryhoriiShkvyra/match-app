@@ -1,0 +1,64 @@
+.block {
+    margin: 1rem;
+}
+
+.category {
+    margin-bottom: 1rem;
+}
+
+.cards {
+    display: flex;
+    flex: 1 ;
+    gap: 3rem;
+}
+
+.card {
+    width: 45%;
+    height: 18rem;
+
+    position: relative;
+
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+}
+
+.cardNameBlock {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+
+    font-weight: 700;
+}
+
+.onlineStatus {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.statusOnline {
+    width: 0.5rem;
+    height: 0.5rem;
+
+    margin-top: 0.45rem;
+
+    background-color: green;
+    border-radius: 1rem;
+}
+
+.statusLeft {
+    color: rgb(127, 102, 2);
+}
+
+.btnBlock {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    width: 15rem;
+    height: 2.5rem;
+    background: #333;
+    border-radius: 1rem;
+
+    color: #999;
+}

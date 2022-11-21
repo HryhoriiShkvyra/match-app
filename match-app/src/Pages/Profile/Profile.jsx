@@ -1,16 +1,18 @@
 import React, {useState} from "react";
 import classes from './Profile.module.css'
-import { IMG } from '../../assets/img.jpg'
+// import { IMG } from 'sassets/img.jpg'
 
 export const Profile = ({userData, setUserData}) => {
 
 
-    const user = (userData.find(user => user.id === 1))
+    const user = (userData.find(user => user.id === 4))
 
     return(
         <div className="containerIn">
             <div className={classes.content}>
-                <div className={classes.photo}>{user.photo}</div>
+                <div className={classes.photoBlock}>
+                    <img className={classes.photo} src={user.photo}/>
+                </div>
                 <div className={classes.userAbout}>
                     <div className={classes.name}>{user.name},</div>
                     <div className={classes.age}>{user.age}</div>
