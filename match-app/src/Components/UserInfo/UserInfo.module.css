@@ -1,0 +1,78 @@
+/* ============= Name Block ============== */
+
+.content {
+    display: grid;
+    gap: 1rem;
+}
+
+.BlockTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+}
+
+.userLife {
+    display: grid;
+    padding-top: 0.5rem;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.userLifeRow {
+    display: flex;
+    gap: 0.5rem;
+
+}
+
+
+/* ================= About Me ================ */
+
+
+
+.aboutBlockElse {
+    display: grid;
+    gap: 1rem;
+    color: #666;
+}
+
+.ZodiacSign {
+    width: 3.8rem;
+    padding: 0.3rem;
+    border: 1px solid #666;
+    border-radius: 1rem;
+}
+
+
+/* =============== Interests ================ */
+
+.interests {
+    display: flex;
+}
+
+.interest {
+    padding: 0.5rem;
+    color: #666;
+    border: 1px solid #666;
+    border-radius: 1.5rem ;
+}
+
+/* ================ Btns Block ================= */
+
+
+.btnsBlock {
+    text-align: center;
+    padding-bottom: 10rem;
+}
+
+.FirstBtn {
+    padding: 3rem 0;
+    color: rgb(238, 56, 56);
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+}
+
+.SecondBtn {
+    padding: 3rem 0;
+    color: #666;
+    border-bottom: 1px solid #666;
+}
