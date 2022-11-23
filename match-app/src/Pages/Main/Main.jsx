@@ -1,14 +1,108 @@
-import React from "react";
+import React, {useState} from "react";
+import classes from './Main.module.css'
+import IMG1 from '../../assets/img4.jpg'
 
 
 
+export const Main = ({userData}) => {
 
+    const [moreInfoActive, setMoreInfoActive] = useState(false)
+    const showMoreInfo = () => {
+        setMoreInfoActive(moreInfoActive => !moreInfoActive)
+        if(moreInfoActive === true) {
+            console.log('more info work')
+        }
+        else {
+            console.log('more info still work')
+        }
+    }
 
-export const Main = () => {
     return(
-        <div>
+        <div className="containerIn">
+            <div className={classes.main}>
+                <div className={moreInfoActive ? classes.active : classes.content}>
+                    <div className={classes.photoBlock} >
+                        <img src={IMG1} className={classes.photo}/>
+                    </div>
+                    <div className={classes.onPhoto}>
+
+                        <div className={classes.info}>
+                            <div className={classes.nameAndAge}>
+                                Olena 99
+                                <span className={classes.verification}>
+                                    <i style={{background: 'none', borderRadius: '1rem'}} class="fa-solid fa-check"></i>
+                                </span>
+                            </div>
+                            <div className={classes.onlineStatus}>
+                                <div className={classes.circle}></div>
+                                Online Now</div>
+                            <div className={classes.distance}>
+                                <i style={{background: 'none'}} class="fa-solid fa-location-dot"></i>
+                                31 milFs away
+                            </div>
+                        </div>
+
+                        <div className={classes.btnBlock}>
+                            <button onClick={showMoreInfo} className={classes.moreInfo}>
+                                {moreInfoActive ?
+                                    <i style={{
+                                        width : '3.5rem',
+                                        height: '3.5rem',
+                                        background: 'red',
+                                        borderRadius: '2rem',
+                                        paddingTop: '1rem',
+                                        margin: '-1rem -3rem 0 '
+                                    }} class="fa-solid fa-arrow-down"></i>
+                                    :  
+                                    <i className={classes.btnDown} style={{background: 'none'}} class="fa-solid fa-arrow-up"></i>
+
+                                }
+                            </button>
+                        </div>
+
+                        <div className={classes.btnBar}>
+                            <div className={classes.btnItem}> 
+                                <button className={classes.btnOne}>
+                                    <i style={{background: 'none', color: 'white'}} class="fa-solid fa-rotate-left"></i>
+                                </button>
+                            </div>
+                            <div className={classes.btnItemAlpha}> 
+                                <button className={classes.btnTwo}>
+                                    <i style={{background: 'none', color: 'rgb(228, 45, 45)'}} class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                            <div className={classes.btnItem}> 
+                                <button className={classes.btnThree}>
+                                    <i style={{background: 'none', color: 'rgb(46, 217, 255)'}} class="fa-solid fa-star"></i>
+                                </button>
+                            </div>
+                            <div className={classes.btnItemAlpha}> 
+                                <button className={classes.btnFour}>
+                                        <i style={{background: 'none', color: 'rgb(120, 232, 130)'}} class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                            <div className={classes.btnItem}> 
+                                <button className={classes.btnFive}>
+                                    <i style={{background: 'none', color: 'rgb(165, 83, 180)'}} class="fa-solid fa-bolt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div className={classes.moreAction}>
+                    <div className={classes.shareField}>
+                        <div className={classes.shareBtn}>
+                            <button className={classes.share}>
+                                Share profile to your friends
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* {list.map(post =>  */}
-                <div className='userContent'>
+                {/* <div className='userContent'>
                     <div className='userPhoto'>
                     <div className='userPhotoPlaceHolder'>may be photo 3/4</div>
                     </div>
@@ -35,7 +129,7 @@ export const Main = () => {
                     
 
                     
-                </div>
+                </div> */}
             {/* )} */}
         </div>
     )

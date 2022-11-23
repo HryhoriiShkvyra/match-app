@@ -134,11 +134,11 @@ function App() {
               <i class="fa-solid fa-comments"></i>
             </Link>
             <Link onClick={() => setActivePage('profile')} className={activePage === 'profile' ? 'active' : 'menuBtn'} to='/Profile'> 
-              <i class="fa-solid fa-user"></i>
+              <i class="fa-solid fa-user"></i> 
             </Link>
           </div>
           <Routes>
-            <Route path='/' element={<Main/>} />
+            <Route path='/' element={<Main userData={userData}/>} />
             <Route path='/Events' element={<Events/>}/>
             <Route path='/Match'  element={<Match userData={userData} setUserData={setUserData}/>}/>
             <Route path='/Chat' element={<Chat/>}/>
