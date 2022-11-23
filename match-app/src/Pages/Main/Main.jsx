@@ -19,48 +19,55 @@ export const Main = ({userData}) => {
 
     return(
         <div className="containerIn">
-            <div className={classes.main}>
+            <div className={moreInfoActive ? classes.main : classes.mainActive}>
                 <div className={moreInfoActive ? classes.active : classes.content}>
                     <div className={classes.photoBlock} >
                         <img src={IMG1} className={classes.photo}/>
                     </div>
                     <div className={classes.onPhoto}>
 
-                        <div className={classes.info}>
-                            <div className={classes.nameAndAge}>
-                                Olena 99
-                                <span className={classes.verification}>
-                                    <i style={{background: 'none', borderRadius: '1rem'}} class="fa-solid fa-check"></i>
-                                </span>
+                        {moreInfoActive ?
+                            null
+                            :
+                            <div className={classes.info}>
+                                <div className={classes.nameAndAge}>
+                                    Olena 99
+                                    <span className={classes.verification}>
+                                        <i style={{background: 'none', borderRadius: '1rem'}} class="fa-solid fa-check"></i>
+                                    </span>
+                                </div>
+                                <div className={classes.onlineStatus}>
+                                    <div className={classes.circle}></div>
+                                    Online Now</div>
+                                <div className={classes.distance}>
+                                    <i style={{background: 'none'}} class="fa-solid fa-location-dot"></i>
+                                    31 milFs away
+                                </div>
                             </div>
-                            <div className={classes.onlineStatus}>
-                                <div className={classes.circle}></div>
-                                Online Now</div>
-                            <div className={classes.distance}>
-                                <i style={{background: 'none'}} class="fa-solid fa-location-dot"></i>
-                                31 milFs away
-                            </div>
-                        </div>
-
+                        }
+                       
                         <div className={classes.btnBlock}>
-                            <button onClick={showMoreInfo} className={classes.moreInfo}>
-                                {moreInfoActive ?
+                            {moreInfoActive ? 
+                                <button onClick={showMoreInfo} >
                                     <i style={{
                                         width : '3.5rem',
                                         height: '3.5rem',
                                         background: 'red',
                                         borderRadius: '2rem',
                                         paddingTop: '1rem',
-                                        margin: '-1rem -3rem 0 '
+                                        margin: '10rem -3rem 0 ',
+                                        fontSize: '1.5rem',
+                                        color: '#fff'
                                     }} class="fa-solid fa-arrow-down"></i>
-                                    :  
+                                </button>
+                                :
+                                <button onClick={showMoreInfo} className={classes.moreInfo}>
                                     <i className={classes.btnDown} style={{background: 'none'}} class="fa-solid fa-arrow-up"></i>
-
-                                }
-                            </button>
+                                </button>
+                            }
                         </div>
 
-                        <div className={classes.btnBar}>
+                        <div className={moreInfoActive ? classes.btnBarDeActive : classes.btnBarActive}>
                             <div className={classes.btnItem}> 
                                 <button className={classes.btnOne}>
                                     <i style={{background: 'none', color: 'white'}} class="fa-solid fa-rotate-left"></i>
@@ -87,18 +94,80 @@ export const Main = ({userData}) => {
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
-                <div className={classes.moreAction}>
-                    <div className={classes.shareField}>
-                        <div className={classes.shareBtn}>
-                            <button className={classes.share}>
-                                Share profile to your friends
-                            </button>
+
+                { moreInfoActive
+                    ?
+                        <div>
+                            <div className={classes.openedInfo}>
+                            <div className={classes.openedInfoAbout}>
+                                <div className={classes.openedInfoName}>Name 99</div>
+                                <div className={classes.openedInfoAboutUser}>
+                                    <div className={classes.openedInfoAboutUserCount}>
+                                        <i class="fa-solid fa-suitcase"></i>
+                                        wort at count
+                                    </div>
+                                    <div className={classes.openedInfoAboutUserCount}>
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        education degree count
+                                    </div>
+                                    <div className={classes.openedInfoAboutUserCount}>
+                                        <i class="fa-solid fa-house"></i>
+                                        Lives in count
+                                    </div>
+                                    <div className={classes.openedInfoAboutUserCount}>
+                                        <i class="fa-solid fa-house"></i>
+                                        sexual type count
+                                    </div>
+                                    <div className={classes.openedInfoAboutUserCount}>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        count miles/km away
+                                    </div>
+                                </div>
+                                <div className={classes.openedInfoUserAbout}>
+                                    <div className={classes.openedInfoUserName}>
+                                        About Me
+                                    </div>
+                                    <div  className={classes.openedInfoUserDescriptionBlock}>
+                                        <div className={classes.openedInfoUserDescription}>
+                                            user about himself
+                                        </div>
+                                        <div className={classes.openedInfoUserZodiacSign}>
+                                            icon
+                                            zodiac sign
+                                            
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div className={classes.openedInfoUserInterests}>
+                                        <div className={classes.openedInfoUserInterest}>
+                                            {/* icon
+                                            count */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={classes.moreAction}>
+                            <div className={classes.shareField}>
+                                <div className={classes.shareBtn}>
+                                    <button className={classes.share}>
+                                        Share profile to your friends
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    :
+                    null
+                }
+                
+
+
+                
             </div>
 
             {/* {list.map(post =>  */}
