@@ -59,11 +59,12 @@ export const Main = ({userData}) => {
                                         margin: '10rem -3rem 0 ',
                                         fontSize: '1.5rem',
                                         color: '#fff'
-                                    }} class="fa-solid fa-arrow-down"></i>
+                                    }} class="fa-solid fa-arrow-down"></i>#
                                 </button>
                                 :
                                 <button onClick={showMoreInfo} className={classes.moreInfo}>
                                     <i className={classes.btnDown} style={{background: 'none'}} class="fa-solid fa-arrow-up"></i>
+                                    #
                                 </button>
                             }
                         </div>
@@ -72,26 +73,31 @@ export const Main = ({userData}) => {
                             <div className={classes.btnItem}> 
                                 <button className={classes.btnOne}>
                                     <i style={{background: 'none', color: 'white'}} class="fa-solid fa-rotate-left"></i>
+                                    #
                                 </button>
                             </div>
                             <div className={classes.btnItemAlpha}> 
                                 <button className={classes.btnTwo}>
                                     <i style={{background: 'none', color: 'rgb(228, 45, 45)'}} class="fa-solid fa-xmark"></i>
+                                    #
                                 </button>
                             </div>
                             <div className={classes.btnItem}> 
                                 <button className={classes.btnThree}>
                                     <i style={{background: 'none', color: 'rgb(46, 217, 255)'}} class="fa-solid fa-star"></i>
+                                    #
                                 </button>
                             </div>
                             <div className={classes.btnItemAlpha}> 
                                 <button className={classes.btnFour}>
                                         <i style={{background: 'none', color: 'rgb(120, 232, 130)'}} class="fa-solid fa-heart"></i>
+                                        #
                                 </button>
                             </div>
                             <div className={classes.btnItem}> 
                                 <button className={classes.btnFive}>
                                     <i style={{background: 'none', color: 'rgb(165, 83, 180)'}} class="fa-solid fa-bolt"></i>
+                                    #
                                 </button>
                             </div>
                         </div>

@@ -31,13 +31,14 @@
 
 .containerIn {
     position: relative;
-    width: 100%;
+    width: 32rem;
     height: 55rem;
     margin: 4.5rem auto 0;
 
-    border-radius: 1rem;
 
     overflow: auto;
+    border-radius: 1rem;
+
 }
 
 Link {

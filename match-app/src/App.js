@@ -122,19 +122,19 @@ function App() {
         <Router>
           <div className='menu'>
             <Link onClick={() => setActivePage('#')} className={activePage === '#' ? 'active' : 'menuBtn'} to='/'>
-              <i class="fa-solid fa-fire"></i>
+              <i class="fa-solid fa-fire"></i>#
             </Link>
             <Link onClick={() => setActivePage('event')} className={activePage === 'event' ? 'active' : 'menuBtn'} to='/Events'>
-              <i class="fa-solid fa-magnifying-glass-location"></i>
+              <i class="fa-solid fa-magnifying-glass-location"></i>#
             </Link>
             <Link onClick={() => setActivePage('match')} className={activePage === 'match' ? 'active' : 'menuBtn'} to='/Match'>
-              <i class="fa-solid fa-wine-bottle"></i>
+              <i class="fa-solid fa-wine-bottle"></i>#
             </Link>
             <Link onClick={() => setActivePage('chat')} className={activePage === 'chat' ? 'active' : 'menuBtn'} to='/Chat'>
-              <i class="fa-solid fa-comments"></i>
+              <i class="fa-solid fa-comments"></i>#
             </Link>
             <Link onClick={() => setActivePage('profile')} className={activePage === 'profile' ? 'active' : 'menuBtn'} to='/Profile'> 
-              <i class="fa-solid fa-user"></i> 
+              <i class="fa-solid fa-user"></i>#
             </Link>
           </div>
           <Routes>
